@@ -1,0 +1,32 @@
+try {
+                                PreparedStatement preparedStatement1 = ChristConnexion.getInstance().prepareStatement(queryPiece);
+                                preparedStatement1.setInt(1,type_piece.getSelectionModel().getSelectedIndex());
+                                preparedStatement1.setInt(2,id_cand);
+                                preparedStatement1.setString(3,num_piece.getText());
+                                preparedStatement1.setString(4,pathPiece);
+                                int resultatPiece = preparedStatement1.executeUpdate();
+                                if (resultatPiece == 1){
+                                    String queryDiplome = "INSERT INTO AVOIR_DIPLOMES (DIPLOMES, ID_CAND, NUM_DIP, IMG_DIP) VALUES (?,?,?,?)";
+                                    PreparedStatement preparedStatement2 = ChristConnexion.getInstance().prepareStatement(queryDiplome);
+                                    preparedStatement2.setInt(1,typeDiplome.getSelectionModel().getSelectedIndex());
+                                    preparedStatement2.setInt(2,id_cand);
+                                    preparedStatement2.setString(3,numDiplome.getText());
+                                    preparedStatement2.setString(4,pathDiplome);
+                                    int resultatDiplome = preparedStatement2.executeUpdate();
+                                    if (resultatDiplome == 1){
+                                        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+                                        Parent parent = FXMLLoader.load(getClass().getResource("infoplantation.fxml"));
+                                        Stage stage = new Stage();
+                                        Scene scene2 = new Scene(parent);
+                                        stage.setScene(scene2);
+                                        stage.setTitle("INFORMATION PLANTATION CANDIDAT");
+                                        stage.show();
+                                    }else {
+                                        JOptionPane.showMessageDialog(null,"Erreur insertion diplome");
+                                    }
+                                }else {
+                                    JOptionPane.showMessageDialog(null,"Erreur insertion piece");
+                                }
+                            } catch (SQLException exception) {
+                                JOptionPane.showMessageDialog(null, exception.getMessage(), "ERREUR ! ", JOptionPane.ERROR_MESSAGE);
+                            }
