@@ -33,6 +33,7 @@
                   <Label layoutX="397.0" layoutY="50.0" text="NOMBRE DE FEMME" textFill="#f2e5e5" />
                   <Label layoutX="263.0" layoutY="230.0" text="PHOTO CERTIFICAT" textFill="#fff9f9" />
                   <Button fx:id="fichier" layoutX="231.0" layoutY="247.0" mnemonicParsing="false" onAction="#fichierImage" prefHeight="25.0" prefWidth="163.0" text="INSERER FICHIER" />
+                  <TextField fx:id="imageCertificat" layoutX="199.0" layoutY="272.0" prefHeight="25.0" prefWidth="216.0" />
                </children>
             </AnchorPane>
          </children>

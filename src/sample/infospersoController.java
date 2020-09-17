@@ -139,7 +139,7 @@ public class infospersoController implements Initializable {
         FileChooser piece = new FileChooser();
         piece.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers images",lstFile));
         File fpiece = piece.showOpenDialog(null);
-
+        pathPiece=fpiece.getAbsolutePath();
         if (fpiece !=null){
             imagePiece.setText("Fichier selectionner:" +pathPiece);
         }
