@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class infoplantationController implements Initializable {
+    public TextField imageChoisie;
     private List<String> lstFileCertificat;
     private String pathCertificat;
 
@@ -161,5 +162,9 @@ public class infoplantationController implements Initializable {
         certifi.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers images",lstFileCertificat));
         File fcerif = certifi.showOpenDialog(null);
         pathCertificat=fcerif.getAbsolutePath();
+
+        if (fcerif !=null){
+            imageChoisie.setText("Fichier selectionner:" +pathCertificat);
+        }
     }
 }

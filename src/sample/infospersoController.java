@@ -34,6 +34,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 public class infospersoController implements Initializable {
 
+    public TextField imagePhoto;
+    public TextField imagePiece;
+    public TextField imageDiplome;
     private List<String> lstFile;
     private String pathPhoto,pathPiece,pathDiplome;
     @FXML
@@ -126,6 +129,9 @@ public class infospersoController implements Initializable {
         photo.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers images",lstFile));
         File fphoto = photo.showOpenDialog(null);
         pathPhoto=fphoto.getAbsolutePath();
+        if (fphoto !=null){
+            imagePhoto.setText("Fichier selectionner:" +pathPhoto);
+        }
 
     }
 
@@ -133,7 +139,10 @@ public class infospersoController implements Initializable {
         FileChooser piece = new FileChooser();
         piece.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers images",lstFile));
         File fpiece = piece.showOpenDialog(null);
-        pathPiece=fpiece.getAbsolutePath();
+
+        if (fpiece !=null){
+            imagePiece.setText("Fichier selectionner:" +pathPiece);
+        }
 
     }
 
@@ -142,6 +151,9 @@ public class infospersoController implements Initializable {
         diplome.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers images",lstFile));
         File fdiplome = diplome.showOpenDialog(null);
         pathDiplome=fdiplome.getAbsolutePath();
+        if (fdiplome !=null){
+            imageDiplome.setText("Fichier selectionner:" +pathDiplome);
+        }
     }
 
     public void enrePerso(ActionEvent actionEvent) throws SQLException, IOException {

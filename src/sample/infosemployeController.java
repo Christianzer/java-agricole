@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class infosemployeController implements Initializable {
+    public TextField imageCertificat;
     @FXML
     private TextField nbrEmploy;
     public String pathEmploye;
@@ -154,5 +155,8 @@ public class infosemployeController implements Initializable {
             certifiEmpl.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers images",lstFileCertiEmpl));
             File fceriEmpl = certifiEmpl.showOpenDialog(null);
             pathEmploye=fceriEmpl.getAbsolutePath();
+            if (fceriEmpl !=null){
+                imageCertificat.setText("Fichier selectionner:" +pathEmploye);
+            }
         }
     }

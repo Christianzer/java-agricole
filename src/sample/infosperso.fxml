@@ -54,5 +54,8 @@
       <Button fx:id="photo" layoutX="26.0" layoutY="100.0" mnemonicParsing="false" onAction="#FilePhoto" prefHeight="25.0" prefWidth="149.0" text="CHOISIR PHOTO" />
       <Button fx:id="image_piece" layoutX="464.0" layoutY="304.0" mnemonicParsing="false" onAction="#Filepiece" prefHeight="25.0" prefWidth="149.0" text="CHOISIR L'IMAGE" />
       <Button fx:id="image_diplome" layoutX="464.0" layoutY="370.0" mnemonicParsing="false" onAction="#FileDiplome" prefHeight="25.0" prefWidth="149.0" text="CHOISIR L'IMAGE" />
+      <TextField fx:id="imagePhoto" layoutX="26.0" layoutY="125.0" text="   " />
+      <TextField fx:id="imagePiece" layoutX="464.0" layoutY="329.0" />
+      <TextField fx:id="imageDiplome" layoutX="464.0" layoutY="395.0" />
    </children>
 </AnchorPane>
